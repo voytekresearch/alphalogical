@@ -1,0 +1,84 @@
+n_pop: 2
+populations: 
+    - 
+        name: E
+        type: excitatory
+        bias: 8.0
+        initial: 8
+    - 
+        name: I
+        type: inhibitory
+        bias: 20.0
+        initial: 12
+
+inputs:
+    - 
+        post: E
+        w: 12
+        tau_decay: 4.0e-3
+        initial: 30
+        # noisy_square_pulse(times, a, t, w, dt, sigma, seed=None)
+        mode: {name: noisy_square_pulse, 
+            args: [35, 0.4, 11.7e-3, 1.0e-3, 0.001], 
+            kwargs: {}}
+    - 
+        post: I
+        w: 0
+        tau_decay: 4e-3
+        initial: 0
+        # constant(times, d)
+        mode: {name: constant, args: [0, ], kwargs: {}}
+
+backgrounds:
+    - 
+        post: E
+        f: 10
+        n_bursts: No
+        re: 135
+        ri: 135
+        we: 4e-9
+        wi: 16e-9
+        tau_e: 5e-3
+        tau_i: 10e-3
+        phase: 0.0
+        random: Yes
+        offset: 0
+    - 
+        post: I
+        f: 0
+        n_bursts: No
+        re: 135
+        ri: 135
+        we: 4e-9
+        wi: 16e-9
+        tau_e: 5e-3
+        tau_i: 10e-3
+        phase: 0
+        random: No
+        offset: 0
+
+connections:
+    -
+        pre: E
+        post: E
+        tau_decay: 6e-3
+        w: 0.4
+        initial: 0
+    -
+        pre: E
+        post: I
+        tau_decay: 6e-3
+        w: 1
+        initial: 0
+    - 
+        pre: I
+        post: E
+        tau_decay: 50e-3
+        w: 1
+        initial: 0
+    - 
+        pre: I
+        post: I
+        tau_decay: 50e-3
+        w: 0
+        initial: 0

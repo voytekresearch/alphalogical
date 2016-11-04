@@ -1,0 +1,1493 @@
+backgrounds:
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L3_PC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L3_LBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L3_NBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L4_PC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L4_SS
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L4_SP
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L4_LBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L4_NBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L5_TTPC1
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L5_TTPC2
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L5_LBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L5_NBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_BPC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_IPC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_UTPC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_TCP_L1
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_TCP_L4
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_NBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+  - f: 0
+    n_bursts: false
+    offset: false
+    phase: 0.0
+    post: L6_LBC
+    random: false
+    re: 135
+    ri: 135
+    tau_e: 0.005
+    tau_i: 0.01
+    we: 4.0e-09
+    wi: 1.6e-08
+connections:
+  - c: 2.8
+    initial: 2
+    p: 0.056
+    post: L3_PC
+    pre: L3_PC
+    tau_decay: 0.047
+    w: 3.0e-10
+  - c: 8.1
+    initial: 2
+    p: 0.051
+    post: L3_LBC
+    pre: L3_PC
+    tau_decay: 0.024
+    w: 3.0e-10
+  - c: 17
+    initial: 2
+    p: 0.05
+    post: L3_PC
+    pre: L3_LBC
+    tau_decay: 0.048
+    w: 1.1e-09
+  - c: 15
+    initial: 2
+    p: 0.051
+    post: L3_LBC
+    pre: L3_LBC
+    tau_decay: 0.073
+    w: 3.3e-10
+  - c: 3.8
+    initial: 2
+    p: 0.066
+    post: L3_NBC
+    pre: L3_PC
+    tau_decay: 0.017
+    w: 3.1e-10
+  - c: 17
+    initial: 2
+    p: 0.1
+    post: L3_PC
+    pre: L3_NBC
+    tau_decay: 0.048
+    w: 1.4e-09
+  - c: 16
+    initial: 2
+    p: 0.094
+    post: L3_NBC
+    pre: L3_NBC
+    tau_decay: 0.083
+    w: 3.1e-10
+  - c: 2.6
+    initial: 2
+    p: 0.066
+    post: L4_PC
+    pre: L3_PC
+    tau_decay: 0.052
+    w: 3.1e-10
+  - c: 2.5
+    initial: 2
+    p: 0.053
+    post: L4_SS
+    pre: L3_PC
+    tau_decay: 0.055
+    w: 3.1e-10
+  - c: 6.9
+    initial: 2
+    p: 0.029
+    post: L4_LBC
+    pre: L3_PC
+    tau_decay: 0.022
+    w: 3.0e-10
+  - c: 6.7
+    initial: 2
+    p: 0.031
+    post: L4_NBC
+    pre: L3_PC
+    tau_decay: 0.017
+    w: 3.0e-10
+  - c: 3.8
+    initial: 2
+    p: 0.078
+    post: L5_TTPC1
+    pre: L3_PC
+    tau_decay: 0.071
+    w: 2.9e-10
+  - c: 3.8
+    initial: 2
+    p: 0.082
+    post: L5_TTPC2
+    pre: L3_PC
+    tau_decay: 0.058
+    w: 3.0e-10
+  - c: 6.5
+    initial: 2
+    p: 0.016
+    post: L5_LBC
+    pre: L3_PC
+    tau_decay: 0.016
+    w: 2.9e-10
+  - c: 5.8
+    initial: 2
+    p: 0.014
+    post: L5_NBC
+    pre: L3_PC
+    tau_decay: 0.0079
+    w: 3.0e-10
+  - c: 16.5
+    initial: 2
+    p: 0.033
+    post: L5_TTPC1
+    pre: L3_LBC
+    tau_decay: 0.13
+    w: 1.2e-09
+  - c: 16
+    initial: 2
+    p: 0.033
+    post: L5_TTPC2
+    pre: L3_LBC
+    tau_decay: 0.12
+    w: 1.1e-09
+  - c: 13
+    initial: 2
+    p: 0.043
+    post: L5_TTPC1
+    pre: L3_NBC
+    tau_decay: 0.14
+    w: 1.2e-09
+  - c: 14
+    initial: 2
+    p: 0.04
+    post: L5_TTPC2
+    pre: L3_NBC
+    tau_decay: 0.12
+    w: 1.4e-09
+  - c: 2.4
+    initial: 2
+    p: 0.014
+    post: L6_BPC
+    pre: L3_PC
+    tau_decay: 0.056
+    w: 3.0e-10
+  - c: 2.3
+    initial: 2
+    p: 0.0028
+    post: L6_IPC
+    pre: L3_PC
+    tau_decay: 0.045
+    w: 3.0e-10
+  - c: 2.5
+    initial: 2
+    p: 0.002
+    post: L6_UTPC
+    pre: L3_PC
+    tau_decay: 0.07
+    w: 3.0e-10
+  - c: 2.4
+    initial: 2
+    p: 0.016
+    post: L6_TCP_L1
+    pre: L3_PC
+    tau_decay: 0.057
+    w: 3.0e-10
+  - c: 2.4
+    initial: 2
+    p: 0.021
+    post: L6_TCP_L4
+    pre: L3_PC
+    tau_decay: 0.057
+    w: 3.0e-10
+  - c: 4.5
+    initial: 2
+    p: 0.0022
+    post: L6_NBC
+    pre: L3_PC
+    tau_decay: 0.0082
+    w: 3.0e-10
+  - c: 4.9
+    initial: 2
+    p: 0.0026
+    post: L6_LBC
+    pre: L3_PC
+    tau_decay: 0.016
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.076
+    post: L4_PC
+    pre: L4_PC
+    tau_decay: 0.061
+    w: 2.9e-10
+  - c: 3.2
+    initial: 2
+    p: 0.065
+    post: L4_SS
+    pre: L4_PC
+    tau_decay: 0.067
+    w: 2.9e-10
+  - c: 3.5
+    initial: 2
+    p: 0.064
+    post: L4_SP
+    pre: L4_PC
+    tau_decay: 0.062
+    w: 2.9e-10
+  - c: 7.9
+    initial: 2
+    p: 0.042
+    post: L4_LBC
+    pre: L4_PC
+    tau_decay: 0.025
+    w: 2.9e-10
+  - c: 16
+    initial: 2
+    p: 0.063
+    post: L4_PC
+    pre: L4_LBC
+    tau_decay: 0.061
+    w: 8.9e-10
+  - c: 14
+    initial: 2
+    p: 0.062
+    post: L4_LBC
+    pre: L4_LBC
+    tau_decay: 0.16
+    w: 3.3e-10
+  - c: 16
+    initial: 2
+    p: 0.084
+    post: L4_SS
+    pre: L4_LBC
+    tau_decay: 0.062
+    w: 1.1e-09
+  - c: 16
+    initial: 2
+    p: 0.074
+    post: L4_SP
+    pre: L4_LBC
+    tau_decay: 0.052
+    w: 1.2e-09
+  - c: 19
+    initial: 2
+    p: 0.067
+    post: L4_NBC
+    pre: L4_NBC
+    tau_decay: 0.11
+    w: 3.4e-10
+  - c: 19
+    initial: 2
+    p: 0.074
+    post: L4_SS
+    pre: L4_NBC
+    tau_decay: 0.059
+    w: 6.4e-10
+  - c: 21
+    initial: 2
+    p: 0.067
+    post: L4_SP
+    pre: L4_NBC
+    tau_decay: 0.05
+    w: 5.3e-10
+  - c: 2.9
+    initial: 2
+    p: 0.051
+    post: L4_SS
+    pre: L4_SS
+    tau_decay: 0.067
+    w: 3.1e-10
+  - c: 3
+    initial: 2
+    p: 0.062
+    post: L4_PC
+    pre: L4_SS
+    tau_decay: 0.06
+    w: 3.0e-10
+  - c: 8
+    initial: 2
+    p: 0.026
+    post: L4_LBC
+    pre: L4_SS
+    tau_decay: 0.023
+    w: 3.0e-10
+  - c: 8.1
+    initial: 2
+    p: 0.03
+    post: L4_NBC
+    pre: L4_SS
+    tau_decay: 0.017
+    w: 3.0e-10
+  - c: 4.8
+    initial: 2
+    p: 0.0096
+    post: L3_PC
+    pre: L4_SS
+    tau_decay: 0.05
+    w: 3.3e-10
+  - c: 6.1
+    initial: 2
+    p: 0.0088
+    post: L3_LBC
+    pre: L4_SS
+    tau_decay: 0.022
+    w: 3.3e-10
+  - c: 4.2
+    initial: 2
+    p: 0.084
+    post: L5_TTPC1
+    pre: L4_SS
+    tau_decay: 0.059
+    w: 3.1e-10
+  - c: 4.3
+    initial: 2
+    p: 0.085
+    post: L5_TTPC2
+    pre: L4_SS
+    tau_decay: 0.056
+    w: 3.1e-10
+  - c: 7.8
+    initial: 2
+    p: 0.019
+    post: L5_LBC
+    pre: L4_SS
+    tau_decay: 0.021
+    w: 3.0e-10
+  - c: 7.1
+    initial: 2
+    p: 0.019
+    post: L5_NBC
+    pre: L4_SS
+    tau_decay: 0.0082
+    w: 3.0e-10
+  - c: 17
+    initial: 2
+    p: 0.056
+    post: L5_TTPC1
+    pre: L4_LBC
+    tau_decay: 0.095
+    w: 9.8e-10
+  - c: 17
+    initial: 2
+    p: 0.056
+    post: L5_TTPC1
+    pre: L4_LBC
+    tau_decay: 0.095
+    w: 9.8e-10
+  - c: 17
+    initial: 2
+    p: 0.058
+    post: L5_TTPC2
+    pre: L4_LBC
+    tau_decay: 0.088
+    w: 9.0e-10
+  - c: 22
+    initial: 2
+    p: 0.045
+    post: L5_TTPC1
+    pre: L4_NBC
+    tau_decay: 0.097
+    w: 4.3e-10
+  - c: 23
+    initial: 2
+    p: 0.043
+    post: L5_TTPC2
+    pre: L4_NBC
+    tau_decay: 0.09
+    w: 1.1e-09
+  - c: 2.5
+    initial: 2
+    p: 0.032
+    post: L6_BPC
+    pre: L4_PC
+    tau_decay: 0.059
+    w: 3.0e-10
+  - c: 2.4
+    initial: 2
+    p: 0.0081
+    post: L6_IPC
+    pre: L4_PC
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 2.5
+    initial: 2
+    p: 0.031
+    post: L6_UTPC
+    pre: L4_PC
+    tau_decay: 0.056
+    w: 3.0e-10
+  - c: 2.5
+    initial: 2
+    p: 0.031
+    post: L6_TCP_L1
+    pre: L4_PC
+    tau_decay: 0.056
+    w: 3.1e-10
+  - c: 2.5
+    initial: 2
+    p: 0.044
+    post: L6_TCP_L4
+    pre: L4_PC
+    tau_decay: 0.057
+    w: 3.0e-10
+  - c: 2.5
+    initial: 2
+    p: 0.004
+    post: L6_UTPC
+    pre: L4_PC
+    tau_decay: 0.067
+    w: 3.0e-10
+  - c: 5.5
+    initial: 2
+    p: 0.0063
+    post: L6_LBC
+    pre: L4_PC
+    tau_decay: 0.017
+    w: 3.0e-10
+  - c: 5.4
+    initial: 2
+    p: 0.012
+    post: L6_NBC
+    pre: L4_PC
+    tau_decay: 0.0077
+    w: 3.0e-10
+  - c: 6.2
+    initial: 2
+    p: 0.063
+    post: L5_TTPC1
+    pre: L5_TTPC1
+    tau_decay: 0.058
+    w: 3.1e-10
+  - c: 6.1
+    initial: 2
+    p: 0.069
+    post: L5_TTPC2
+    pre: L5_TTPC1
+    tau_decay: 0.055
+    w: 3.1e-10
+  - c: 6
+    initial: 2
+    p: 0.088
+    post: L5_TTPC2
+    pre: L5_TTPC2
+    tau_decay: 0.055
+    w: 3.1e-10
+  - c: 6
+    initial: 2
+    p: 0.082
+    post: L5_TTPC1
+    pre: L5_TTPC2
+    tau_decay: 0.058
+    w: 3.1e-10
+  - c: 8.2
+    initial: 2
+    p: 0.032
+    post: L5_LBC
+    pre: L5_TTPC1
+    tau_decay: 0.019
+    w: 3.0e-10
+  - c: 22
+    initial: 2
+    p: 0.064
+    post: L5_TTPC1
+    pre: L5_LBC
+    tau_decay: 0.096
+    w: 9.2e-10
+  - c: 15
+    initial: 2
+    p: 0.047
+    post: L5_LBC
+    pre: L5_LBC
+    tau_decay: 0.15
+    w: 3.4e-10
+  - c: 8.2
+    initial: 2
+    p: 0.042
+    post: L5_LBC
+    pre: L5_TTPC2
+    tau_decay: 0.016
+    w: 3.0e-10
+  - c: 23
+    initial: 2
+    p: 0.078
+    post: L5_TTPC2
+    pre: L5_LBC
+    tau_decay: 0.081
+    w: 9.8e-10
+  - c: 3.7
+    initial: 2
+    p: 0.062
+    post: L5_NBC
+    pre: L5_TTPC1
+    tau_decay: 0.0081
+    w: 3.0e-10
+  - c: 24
+    initial: 2
+    p: 0.079
+    post: L5_TTPC1
+    pre: L5_NBC
+    tau_decay: 0.095
+    w: 1.7e-09
+  - c: 3.7
+    initial: 2
+    p: 0.075
+    post: L5_NBC
+    pre: L5_TTPC2
+    tau_decay: 0.0098
+    w: 3.0e-10
+  - c: 25
+    initial: 2
+    p: 0.078
+    post: L5_TTPC2
+    pre: L5_NBC
+    tau_decay: 0.081
+    w: 9.8e-10
+  - c: 2.3
+    initial: 2
+    p: 0.00073
+    post: L3_PC
+    pre: L5_TTPC1
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 5.3
+    initial: 2
+    p: 0.0003
+    post: L3_LBC
+    pre: L5_TTPC1
+    tau_decay: 0.021
+    w: 3.0e-10
+  - c: 5.3
+    initial: 2
+    p: 0.0003
+    post: L3_NBC
+    pre: L5_TTPC1
+    tau_decay: 0.021
+    w: 3.0e-10
+  - c: 2.5
+    initial: 2
+    p: 0.011
+    post: L4_PC
+    pre: L5_TTPC1
+    tau_decay: 0.051
+    w: 2.9e-10
+  - c: 2.4
+    initial: 2
+    p: 0.0094
+    post: L4_SS
+    pre: L5_TTPC1
+    tau_decay: 0.055
+    w: 3.0e-10
+  - c: 2.4
+    initial: 2
+    p: 0.0072
+    post: L4_SP
+    pre: L5_TTPC1
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 6.1
+    initial: 2
+    p: 0.0069
+    post: L4_LBC
+    pre: L5_TTPC1
+    tau_decay: 0.025
+    w: 3.8e-10
+  - c: 5.9
+    initial: 2
+    p: 0.0045
+    post: L4_NBC
+    pre: L5_TTPC1
+    tau_decay: 0.018
+    w: 3.8e-10
+  - c: 2.6
+    initial: 2
+    p: 0.015
+    post: L4_PC
+    pre: L5_TTPC2
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 2.4
+    initial: 2
+    p: 0.013
+    post: L4_SS
+    pre: L5_TTPC2
+    tau_decay: 0.055
+    w: 3.0e-10
+  - c: 2.6
+    initial: 2
+    p: 0.011
+    post: L4_SP
+    pre: L5_TTPC2
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 6.9
+    initial: 2
+    p: 0.022
+    post: L4_LBC
+    pre: L5_TTPC2
+    tau_decay: 0.023
+    w: 3.0e-10
+  - c: 6.7
+    initial: 2
+    p: 0.0056
+    post: L4_NBC
+    pre: L5_TTPC2
+    tau_decay: 0.018
+    w: 3.0e-10
+  - c: 3.4
+    initial: 2
+    p: 0.047
+    post: L6_BPC
+    pre: L5_TTPC1
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 3.5
+    initial: 2
+    p: 0.018
+    post: L6_IPC
+    pre: L5_TTPC1
+    tau_decay: 0.044
+    w: 3.0e-10
+  - c: 3.6
+    initial: 2
+    p: 0.053
+    post: L6_UTPC
+    pre: L5_TTPC1
+    tau_decay: 0.053
+    w: 3.0e-10
+  - c: 3.6
+    initial: 2
+    p: 0.045
+    post: L6_TCP_L1
+    pre: L5_TTPC1
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 3.5
+    initial: 2
+    p: 0.047
+    post: L6_TCP_L4
+    pre: L5_TTPC1
+    tau_decay: 0.047
+    w: 3.0e-10
+  - c: 8.3
+    initial: 2
+    p: 0.015
+    post: L6_LBC
+    pre: L5_TTPC1
+    tau_decay: 0.022
+    w: 3.0e-10
+  - c: 8.3
+    initial: 2
+    p: 0.013
+    post: L6_NBC
+    pre: L5_TTPC1
+    tau_decay: 0.01
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.046
+    post: L6_BPC
+    pre: L5_TTPC2
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.016
+    post: L6_IPC
+    pre: L5_TTPC2
+    tau_decay: 0.045
+    w: 3.0e-10
+  - c: 3.2
+    initial: 2
+    p: 0.052
+    post: L6_UTPC
+    pre: L5_TTPC2
+    tau_decay: 0.054
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.044
+    post: L6_TCP_L1
+    pre: L5_TTPC2
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 3.2
+    initial: 2
+    p: 0.048
+    post: L6_TCP_L4
+    pre: L5_TTPC2
+    tau_decay: 0.049
+    w: 3.0e-10
+  - c: 7.9
+    initial: 2
+    p: 0.013
+    post: L6_LBC
+    pre: L5_TTPC2
+    tau_decay: 0.023
+    w: 3.0e-10
+  - c: 8.1
+    initial: 2
+    p: 0.012
+    post: L6_NBC
+    pre: L5_TTPC2
+    tau_decay: 0.01
+    w: 3.0e-10
+  - c: 2.9
+    initial: 2
+    p: 0.1
+    post: L6_BPC
+    pre: L6_BPC
+    tau_decay: 0.048
+    w: 3.0e-10
+  - c: 2.7
+    initial: 2
+    p: 0.11
+    post: L6_IPC
+    pre: L6_BPC
+    tau_decay: 0.044
+    w: 3.0e-10
+  - c: 3.2
+    initial: 2
+    p: 0.072
+    post: L6_TCP_L1
+    pre: L6_BPC
+    tau_decay: 0.044
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.11
+    post: L6_TCP_L4
+    pre: L6_BPC
+    tau_decay: 0.047
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.11
+    post: L6_UTPC
+    pre: L6_BPC
+    tau_decay: 0.047
+    w: 3.0e-10
+  - c: 7.2
+    initial: 2
+    p: 0.054
+    post: L6_LBC
+    pre: L6_BPC
+    tau_decay: 0.016
+    w: 3.0e-10
+  - c: 6.8
+    initial: 2
+    p: 0.062
+    post: L6_NBC
+    pre: L6_BPC
+    tau_decay: 0.0086
+    w: 3.0e-10
+  - c: 2.8
+    initial: 2
+    p: 0.089
+    post: L6_IPC
+    pre: L6_IPC
+    tau_decay: 0.044
+    w: 3.0e-10
+  - c: 2.9
+    initial: 2
+    p: 0.088
+    post: L6_BPC
+    pre: L6_IPC
+    tau_decay: 0.04
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.075
+    post: L6_TCP_L4
+    pre: L6_IPC
+    tau_decay: 0.033
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.073
+    post: L6_TCP_L1
+    pre: L6_IPC
+    tau_decay: 0.035
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.097
+    post: L6_UTPC
+    pre: L6_IPC
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 7.4
+    initial: 2
+    p: 0.052
+    post: L6_LBC
+    pre: L6_IPC
+    tau_decay: 0.053
+    w: 3.0e-10
+  - c: 7
+    initial: 2
+    p: 0.059
+    post: L6_NBC
+    pre: L6_IPC
+    tau_decay: 0.079
+    w: 3.0e-10
+  - c: 4.6
+    initial: 2
+    p: 0.071
+    post: L6_TCP_L1
+    pre: L6_TCP_L1
+    tau_decay: 0.033
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.11
+    post: L6_IPC
+    pre: L6_TCP_L1
+    tau_decay: 0.045
+    w: 3.0e-10
+  - c: 4.6
+    initial: 2
+    p: 0.07
+    post: L6_TCP_L4
+    pre: L6_TCP_L1
+    tau_decay: 0.036
+    w: 3.0e-10
+  - c: 3.1
+    initial: 2
+    p: 0.13
+    post: L6_UTPC
+    pre: L6_TCP_L1
+    tau_decay: 0.045
+    w: 3.0e-10
+  - c: 4.5
+    initial: 2
+    p: 0.055
+    post: L6_TCP_L4
+    pre: L6_TCP_L4
+    tau_decay: 0.036
+    w: 3.0e-10
+  - c: 2.8
+    initial: 2
+    p: 0.11
+    post: L6_IPC
+    pre: L6_TCP_L4
+    tau_decay: 0.045
+    w: 3.0e-10
+  - c: 4.6
+    initial: 2
+    p: 0.055
+    post: L6_TCP_L1
+    pre: L6_TCP_L4
+    tau_decay: 0.035
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.11
+    post: L6_UTPC
+    pre: L6_TCP_L4
+    tau_decay: 0.047
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.13
+    post: L6_UTPC
+    pre: L6_UTPC
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 3.2
+    initial: 2
+    p: 0.13
+    post: L6_BPC
+    pre: L6_UTPC
+    tau_decay: 0.046
+    w: 3.0e-10
+  - c: 3
+    initial: 2
+    p: 0.13
+    post: L6_IPC
+    pre: L6_UTPC
+    tau_decay: 0.044
+    w: 3.0e-10
+  - c: 3.7
+    initial: 2
+    p: 0.091
+    post: L6_TCP_L1
+    pre: L6_UTPC
+    tau_decay: 0.043
+    w: 3.0e-10
+  - c: 3.3
+    initial: 2
+    p: 0.1
+    post: L6_TCP_L4
+    pre: L6_UTPC
+    tau_decay: 0.042
+    w: 3.0e-10
+  - c: 7.9
+    initial: 2
+    p: 0.071
+    post: L6_LBC
+    pre: L6_UTPC
+    tau_decay: 0.018
+    w: 3.0e-10
+  - c: 7.6
+    initial: 2
+    p: 0.078
+    post: L6_NBC
+    pre: L6_UTPC
+    tau_decay: 0.0099
+    w: 3.0e-10
+  - c: 13
+    initial: 2
+    p: 0.056
+    post: L6_LBC
+    pre: L6_LBC
+    tau_decay: 0.036
+    w: 3.0e-10
+  - c: 13
+    initial: 2
+    p: 0.079
+    post: L6_BPC
+    pre: L6_LBC
+    tau_decay: 0.051
+    w: 3.0e-10
+  - c: 13
+    initial: 2
+    p: 0.057
+    post: L6_IPC
+    pre: L6_LBC
+    tau_decay: 0.05
+    w: 2.7e-10
+  - c: 14
+    initial: 2
+    p: 0.074
+    post: L6_TCP_L1
+    pre: L6_LBC
+    tau_decay: 0.048
+    w: 2.7e-10
+  - c: 13
+    initial: 2
+    p: 0.076
+    post: L6_TCP_L4
+    pre: L6_LBC
+    tau_decay: 0.055
+    w: 2.6e-10
+  - c: 14
+    initial: 2
+    p: 0.075
+    post: L6_UTPC
+    pre: L6_LBC
+    tau_decay: 0.055
+    w: 2.7e-10
+  - c: 15
+    initial: 2
+    p: 0.065
+    post: L6_IPC
+    pre: L6_NBC
+    tau_decay: 0.051
+    w: 1.4e-09
+  - c: 17
+    initial: 2
+    p: 0.079
+    post: L6_TCP_L1
+    pre: L6_NBC
+    tau_decay: 0.051
+    w: 1.8e-09
+  - c: 16
+    initial: 2
+    p: 0.078
+    post: L6_TCP_L4
+    pre: L6_NBC
+    tau_decay: 0.054
+    w: 1.9e-09
+  - c: 16
+    initial: 2
+    p: 0.075
+    post: L6_UTPC
+    pre: L6_NBC
+    tau_decay: 0.053
+    w: 1.8e-09
+  - c: 18.8
+    initial: 2
+    p: 0.017
+    post: L5_TTPC1
+    pre: L6_LBC
+    tau_decay: 0.1
+    w: 2.7e-10
+  - c: 16
+    initial: 2
+    p: 0.018
+    post: L5_TTPC2
+    pre: L6_LBC
+    tau_decay: 0.09
+    w: 2.7e-10
+  - c: 22
+    initial: 2
+    p: 0.0079
+    post: L5_TTPC2
+    pre: L6_NBC
+    tau_decay: 0.092
+    w: 2.0e-09
+inputs:
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L3_PC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L3_LBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L3_NBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L4_PC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L4_SS
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L4_SP
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L4_LBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L4_NBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L5_TTPC1
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L5_TTPC2
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L5_LBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L5_NBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_BPC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_IPC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_UTPC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_TCP_L1
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_TCP_L4
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_NBC
+    tau_decay: 0.004
+    w: 10
+  - initial: 10
+    mode:
+      args:
+        - 10
+      kwargs: {}
+      name: constant
+    post: L6_LBC
+    tau_decay: 0.004
+    w: 10
+n_pop: 19
+populations:
+  - bias: 0.01
+    initial: 8
+    n: 5877
+    name: L3_PC
+    type: excitatory
+  - bias: 0.006
+    initial: 12
+    n: 456
+    name: L3_LBC
+    type: inhibitory
+  - bias: 0.006
+    initial: 12
+    n: 274
+    name: L3_NBC
+    type: inhibitory
+  - bias: 0.01
+    initial: 8
+    n: 2674
+    name: L4_PC
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 406
+    name: L4_SS
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 1098
+    name: L4_SP
+    type: excitatory
+  - bias: 0.006
+    initial: 12
+    n: 122
+    name: L4_LBC
+    type: inhibitory
+  - bias: 0.006
+    initial: 12
+    n: 96
+    name: L4_NBC
+    type: inhibitory
+  - bias: 0.01
+    initial: 8
+    n: 2403
+    name: L5_TTPC1
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 2000
+    name: L5_TTPC2
+    type: excitatory
+  - bias: 6000.0
+    initial: 12
+    n: 210
+    name: L5_LBC
+    type: inhibitory
+  - bias: 0.006
+    initial: 12
+    n: 200
+    name: L5_NBC
+    type: inhibitory
+  - bias: 0.01
+    initial: 8
+    n: 3174
+    name: L6_BPC
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 3476
+    name: L6_IPC
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 1735
+    name: L6_UTPC
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 1637
+    name: L6_TCP_L1
+    type: excitatory
+  - bias: 0.01
+    initial: 8
+    n: 1440
+    name: L6_TCP_L4
+    type: excitatory
+  - bias: 0.006
+    initial: 12
+    n: 198
+    name: L6_NBC
+    type: inhibitory
+  - bias: 0.006
+    initial: 12
+    n: 463
+    name: L6_LBC
+    type: inhibitory

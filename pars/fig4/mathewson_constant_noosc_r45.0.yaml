@@ -1,0 +1,41 @@
+backgrounds:
+- {f: 0, n_bursts: false, offset: 0, phase: 0.0, post: E, random: true, re: 135, ri: 135,
+  tau_e: 5e-3, tau_i: 10e-3, we: 4e-9, wi: 16e-9}
+- {f: 0, n_bursts: false, offset: 0, phase: 0, post: I, random: false, re: 135, ri: 135,
+  tau_e: 5e-3, tau_i: 10e-3, we: 4e-9, wi: 16e-9}
+connections:
+- {initial: 0, post: E, pre: E, tau_decay: 6e-3, w: 0.4}
+- {initial: 0, post: I, pre: E, tau_decay: 6e-3, w: 1}
+- {initial: 0, post: E, pre: I, tau_decay: 50e-3, w: 1}
+- {initial: 0, post: I, pre: I, tau_decay: 50e-3, w: 0}
+inputs:
+- initial: 30
+  mode:
+    args:
+    - !!python/object/apply:numpy.core.multiarray.scalar
+      - !!python/object/apply:numpy.dtype
+        args: [f8, 0, 1]
+        state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+      - !!binary |
+        AAAAAACARkA=
+    - 0.4
+    - 0.0117
+    - 0.001
+    - 0.001
+    kwargs: {}
+    name: noisy_square_pulse
+  post: E
+  tau_decay: 0.004
+  w: 12
+- initial: 0
+  mode:
+    args: [0]
+    kwargs: {}
+    name: constant
+  post: I
+  tau_decay: 4e-3
+  w: 0
+n_pop: 2
+populations:
+- {bias: 8.0, initial: 8, name: E, type: excitatory}
+- {bias: 20.0, initial: 12, name: I, type: inhibitory}

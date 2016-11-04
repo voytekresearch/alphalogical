@@ -1,0 +1,40 @@
+n_pop: 18
+populations:
+    # L3
+    - 
+        name: L3_PC
+        type: excitatory
+        bias: 10
+        initial: 8
+        n: 5877
+    -
+        name: L3_LBC
+        type: inhibitory
+        bias: 6
+        initial: 12
+        n: 456
+    - 
+        name: L3_NBC
+        type: inhibitory
+        bias: 6
+        n: 274
+    # L4
+    - 
+        name: L4_NBC
+        type: excitatory
+        bias: 10
+        n: 2674
+    - 
+        name: L4_SS
+        type: excitatory
+        bias: 10
+        n: 406
+    - 
+        name: L4_SP
+        type: excitatory
+        bias: 12
+        n: 274
+    -   
+
+
+

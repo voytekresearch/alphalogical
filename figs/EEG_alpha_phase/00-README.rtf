@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww13420\viewh10840\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Each file is a separate subjects, and has 2 minutes of resting data, and 2 minutes of task data. The data is from a single occipital channel. I took the simplest and smallest amount of data to start with - the initial 2 minute rest block that everyone does, and then the first 2 minutes from the experiment block for each subject. \
+\
+DATA DETAILS:\
+- 500 Hz sampling frequency\
+- Channel Oz (central occipital channel)\
+\
+FILE STRUCTURE:\
+- oz_rest_data: 		120 seconds of rest data from channel Oz\
+- oz_trial_data: 		120 seconds of task data from channel Oz\
+- ev_types: 		List of event types in the \
+- ev_times: 		Times for the events in the task data, in ms. \
+					Times are ms with respect to the start of the epoch. \
+\
+Notes:\
+- I think the event names are reasonably clear, let me know if you want more info. \
+- Note that you\'92ll need a conversion to get the sample number from the event time. \
+	round((ev_time / 1000) * 500) will give you sample number of the event. \
+	^ EEGlab is a bit messy with event times, it won\'92t be exact, so this will round to nearest sample.\
+		I think the mismatch has to do with the native sampling rate of the event channel (5000).\
+- You probably want to demean the data. \
+- This data has 
+\b NOT
+\b0  been extensively cleaned. Rest block data is usually pretty clean. For the task data, since I process everything by trial-epochs, there was no obvious way to take the cleaned data and give you a continuous file.\
+- I suggest you eyeball the data before using it - if anything looks crazy just skip that chunk. \
+\
+SOURCE:\
+Data comes from two slightly different experiments. They both have the same kind of rest block, collected at the beginning of the experiment, and the task for both is a visual target detection task. \
+\
+1000s - real-time Phase Behaviour (rtPB) - 15 subjects\
+2000s - Phase Behaviour Attention (PBA) - 14 subjects\
+\
+There is tons more data if you want/need it. rtPB includes more rest blocks (~10 minutes per subject), PBA only has the 2 minutes included here. As for trial data, each subject has ~30-45 minutes of task data. Let me know if you want more -  this was just the easiest to start with. \
+}

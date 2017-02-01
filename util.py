@@ -67,7 +67,7 @@ def find_bursts2(x, burst_thresh, zero_thresh):
     bursts = []
     burst = []
     b = False
-    for i in range(1, n + 1):
+    for i in range(1, n):
         z_last = zeros[i - 1]
         c = candidates[i]
 

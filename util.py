@@ -1,5 +1,5 @@
 from copy import deepcopy
-
+import numpy as np
 from scipy.signal import butter, lfilter
 
 
@@ -44,5 +44,47 @@ def find_bursts(x, start=4, end=2):
                 # and then reset
                 burst = []
                 b = False
+
+    return bursts
+
+
+def find_bursts2(x, burst_thresh, zero_thresh):
+    # Find zeros
+    zeros = np.zeros_like(x, dtype=np.bool)
+    for i, xt in enumerate(x):
+        if xt < zero_thresh:
+            zeros[i] = True
+
+    # Find candidate busts
+    candidates = np.zeros_like(x, dtype=np.bool)
+    for i, xt in enumerate(x):
+        if xt >= burst_thresh:
+            candidates[i] = True
+
+    # Define bursts, checking that zeros preceed bursts
+    n = x.shape[0]
+
+    bursts = []
+    burst = []
+    b = False
+    for i in range(1, n + 1):
+        z_last = zeros[i - 1]
+        c = candidates[i]
+
+        # Still bursting?
+        if b and c:
+            burst.append(i)
+        # Burst onset?
+        elif c and z_last:
+            burst = [i, ]
+            b = True
+        # Burst over.
+        else:
+            # Store that bursts index
+            bursts.append(deepcopy(burst))
+
+            # and reset
+            burst = []
+            b = False
 
     return bursts

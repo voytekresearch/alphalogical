@@ -73,7 +73,7 @@ def find_bursts2(x, burst_thresh, zero_thresh):
 
         # Still bursting?
         if b and c:
-            print("adding i")
+            print("adding iggl")
             burst.append(i)
         # Burst onset?
         elif c and z_last:

@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     fs = 1000
     t = 120  # seconds long
-    alpha = loadmat('../data/alpha_data.mat')
+    alpha = loadmat('data/alpha_data.mat')
     times = np.linspace(0, 120, 120 * 500)
 
     task = alpha['oz_dat_task'][0, :]

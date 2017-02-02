@@ -48,7 +48,7 @@ def find_bursts(x, start=4, end=2):
     return bursts
 
 
-def find_bursts2(x, burst_thresh, zero_thresh):
+def find_bursts2(x, burst_thresh, zero_thresh, history=200):
     # Find zeros
     zeros = np.zeros_like(x, dtype=np.bool)
     for i, xt in enumerate(x):
@@ -67,24 +67,32 @@ def find_bursts2(x, burst_thresh, zero_thresh):
     bursts = []
     burst = []
     b = False
-    for i in range(1, n):
-        z_last = zeros[i - 1]
+    for i in range(history, n):
+        # History is filled with zeros and not bursts?
+        z_last = zeros[history - i:i].sum()
+        c_last = candidates[history - i:i].sum()
+        if (z_last > 0) and np.allclose(c_last, 0.0):
+            z_last = True
+
+        # burst at i?
         c = candidates[i]
 
         # Still bursting?
         if b and c:
-            print("adding iggl")
             burst.append(i)
         # Burst onset?
         elif c and z_last:
             burst = [i, ]
             b = True
         # Burst over.
-        else:
+        elif b:
             # Store that bursts index
             bursts.append(deepcopy(burst))
 
             # and reset
+            burst = []
+            b = False
+        else:
             burst = []
             b = False
 

@@ -104,7 +104,6 @@ def find_bursts2(x, burst_thresh, zero_thresh, history=200):
 if __name__ == "__main__":
     from scipy.io import loadmat
     from scipy.signal import hilbert
-    from scipy.signal import butter, lfilter
     from alphalogical.util import *
 
     fs = 1000

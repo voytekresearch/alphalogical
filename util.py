@@ -73,6 +73,8 @@ def find_bursts2(x, burst_thresh, zero_thresh, history=200):
         c_last = candidates[history - i:i].sum()
         if (z_last > 0) and np.allclose(c_last, 0.0):
             z_last = True
+        else:
+            z_last = False
 
         # burst at i?
         c = candidates[i]

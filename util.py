@@ -48,6 +48,45 @@ def find_bursts(x, start=4, end=2):
     return bursts
 
 
+def find_notbursts(x, zero_thresh):
+    n = x.shape[0]
+
+    # Find zeros
+    candidates = np.zeros_like(x, dtype=np.bool)
+    for i, xt in enumerate(x):
+        if xt < zero_thresh:
+            candidates[i] = True
+
+    # Convert zeros into notburst indices
+    notbursts = []
+    notburst = []
+    b = False
+    for i in range(n):
+        # notburst at i?
+        c = candidates[i]
+
+        # Still notbursting?
+        if b and c:
+            notburst.append(i)
+        # notburst onset?
+        elif c:
+            notburst = [i, ]
+            b = True
+        # notburst over.
+        elif b:
+            # Store that notbursts index
+            notbursts.append(deepcopy(notburst))
+
+            # and reset
+            notburst = []
+            b = False
+        else:
+            notburst = []
+            b = False
+
+    return notbursts
+
+
 def find_bursts2(x, burst_thresh, zero_thresh, history=200):
     # Find zeros
     zeros = np.zeros_like(x, dtype=np.bool)

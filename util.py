@@ -70,7 +70,9 @@ def find_notbursts(x, zero_thresh):
             notburst.append(i)
         # notburst onset?
         elif c:
-            notburst = [i, ]
+            notburst = [
+                i,
+            ]
             b = True
         # notburst over.
         elif b:
@@ -123,7 +125,9 @@ def find_bursts2(x, burst_thresh, zero_thresh, history=200):
             burst.append(i)
         # Burst onset?
         elif c and z_last:
-            burst = [i, ]
+            burst = [
+                i,
+            ]
             b = True
         # Burst over.
         elif b:

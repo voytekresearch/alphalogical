@@ -1,3 +1,4 @@
+import os
 import csv
 import h5py
 import warnings
@@ -36,7 +37,58 @@ def find_closest(t, times):
     return times[idx]
 
 
-@memory.cache
+def load_good_smith_files(data_path):
+    lfp_files = [
+        "Bo130408_s6ae_fixblank_active_0001_converted_ns2.mat",
+        "Bo130408_s6ae_fixblank_active_0002_converted_ns2.mat",
+        "Bo130409_s7ae_fixblank_active_0003_converted_ns2.mat",
+        "Wi130116_s51ae_fixblank_active_0001_converted_ns2.mat",
+        "Bo130404_s4ae_fixblank_active_0002_converted_ns2.mat",
+        "Bo130405_s5ae_fixblank_active_0001_converted_ns2.mat",
+        "Bo130405_s5ae_fixblank_active_0002_converted_ns2.mat",
+        "Bo130405_s5ae_fixblank_active_0003_converted_ns2.mat",
+        "Bo130418_s12ae_fixblank_active_0002_converted_ns2.mat",
+        "Wi121219_s43ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi121219_s43ae_fixblank_active_0002_converted_ns2.mat",
+        "Wi130129_s55ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi130129_s55ae_fixblank_active_0002_converted_ns2.mat",
+        "Wi130205_s58ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi130205_s58ae_fixblank_active_0002_converted_ns2.mat",
+        "Wi130207_s59ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi130207_s59ae_fixblank_active_0002_converted_ns2.mat",
+        "Wi130207_s59ae_fixblank_active_0003_converted_ns2.mat",
+        "Wi130208_s60ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi130211_s61ae_fixblank_active_0001_converted_ns2.mat",
+        "Wi130212_s62ae_fixblank_active_0001_converted_ns2.mat"
+    ]
+
+    # Generate rate file names based on the good list
+    rate_files = []
+    for fi in lfp_files:
+        fi_name = os.path.splitext(fi)[0]
+        fi_name = fi_name.split("_")[:5]
+        fi_name = "_".join(fi_name)
+
+        new_name = "{}.mat".format(fi_name)
+
+        rate_files.append(new_name)
+
+    # Generate seg file names based on the good list
+    seg_files = []
+    for fi in lfp_files:
+        fi_name = os.path.splitext(fi)[0]
+        new_name = "{}_segments.csv".format(fi_name)
+
+        seg_files.append(new_name)
+
+    # Add pathing
+    lfp_files = [os.path.join(data_path, fi) for fi in lfp_files]
+    rate_files = [os.path.join(data_path, fi) for fi in rate_files]
+    seg_files = [os.path.join(data_path, fi) for fi in seg_files]
+
+    return lfp_files, rate_files, seg_files
+
+
 def load_smith_foof_results(name):
     results = []
     with open(name, 'r') as fi:
@@ -125,83 +177,96 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
     return y
 
 
-def find_smith_bursts(x_ref, x_lfp, center, fs):
-    # Power
-    alpha = butter_bandpass_filter(x_lfp, center - 2, center + 2, fs, order=2)
-    alpha_pow = np.abs(hilbert(alpha))
-
-    # Est. thresh
-    # Find low
-    low_range = [center - 4, center - 2]
-    if low_range[0] < 0:
-        low_range[0] = 1
-    if low_range[1] < 2:
-        low_range[1] = 2
-    low = np.abs(
-        hilbert(
-            butter_bandpass_filter(
-                x_ref, low_range[0], low_range[1], fs, order=2)))
-
-    # Find high
-    high_range = [center + 2, center + 4]
-    high = np.abs(
-        hilbert(
-            butter_bandpass_filter(
-                x_ref, high_range[0], high_range[1], fs, order=2)))
-
-    # Set thresh
-    M = np.mean((low + high) / 2.0)
-
-    # Find bursts
-    bursts = find_bursts(alpha_pow, 3 * M, 1.5 * M)
-
-    return bursts, alpha, alpha_pow, M
+def hilbert_power(x):
+    return np.abs(hilbert(x))
 
 
-def analyze_smith_bursts(results_code, bursts, alpha_pow, hg_pow, rates, fs):
+def write_analysis(name, results, mode="w"):
+    name = "{}.csv".format(name)
 
-    # Init
-    n_bursts = len(bursts)
+    # If the file exists, don't append another
+    # header....
+    header = True
+    if os.path.isfile(name) and mode == "a":
+        header = False
+
+    # Write that data!
+    keys = sorted(results.keys())
+    with open(name, mode=mode) as fi:
+        writer = csv.writer(fi, delimiter=",")
+
+        if header:
+            writer.writerow(keys)
+
+        writer.writerows(zip(* [results[key] for key in keys]))
+
+
+def shift_bursts(bursts, shift):
+    shifted = []
+    for b in bursts:
+        shifted.append([i + shift for i in b])
+
+    return shifted
+
+
+def shift_extrema(extrema, shift):
+    extrema = [ex + shift for ex in extrema]
+    return extrema
+
+
+def analyze_bursts(analysis_code, bursts, data, fs=1000):
+    if len(bursts) == 0:
+        return None
+
     results = defaultdict(list)
-
     for k, b in enumerate(bursts):
-        burst_time = float(len(b)) / fs
-        alpha_power = np.median(alpha_pow[b])
-        hg_power = np.median(hg_pow[b])
-        rate = np.median(rates[b])
+        b = np.asarray(b)
 
-        # Find peak/troughs
-        #     i, j = b.min(), b.max()
+        # -
+        # Stats
+        n = k
+        length = float(len(b))
+        time = length / fs
+        mean = np.mean(data[b])
+        med = np.median(data[b])
+        sd = np.std(data[b])
 
-        #     peaks, troughs = find_extrema(
-        #         alpha[i:j], fs, 
-        #         (center - bw, center + bw), 
-        #         boundary=None, first_extrema='peak'
-        #     )
+        # -
+        results["analysis_code"].append(analysis_code)
+        results["count"].append(k)
+        results["length"].append(length)
+        results["time"].append(time)
 
-        #     n_cycles = len(peaks)
+        results["mean"].append(mean)
+        results["med"].append(med)
+        results["sd"].append(sd)
 
-        # Peak mask
-        # TODO stats
+    return results
 
-        # Trough mask
-        # TODO stats
 
-        # Save results       
-        results["results_code"].append(results_code)
-        results["burst_index"].append(k)
-        results["n_bursts"].append(n_bursts)
-        results["burst_time"].append(burst_time)
-        results["alpha_power"].append(alpha_power)
-        results["hg_power"].append(hg_power)
-        results["rate"].append(rate)
-    #     results["n_cycles"].append(n_cycles)
-    #     results["peak_alpha_power"].append(peak_alpha_power)
-    #     results["peak_hg_power"].append(peak_hg_power)
-    #     results["peak_rate"].append(peak_rate)
-    #     results["trough_alpha_power"].append(trough_alpha_power)
-    #     results["trough_hg_power"].append(trough_hg_power)
-    #     results["trough_rate"].append(trough_rate)                                
+def analyze_extrema(analysis_code, extrema, data, n_sample=10, fs=1000):
+    if len(extrema) == 0:
+        return None
+
+    results = defaultdict(list)
+    for k, ex in enumerate(extrema):
+        b = range(ex - int(n_sample / 2), ex + int(n_sample / 2))
+        b = np.asarray(b)
+
+        # -
+        # Stats
+        n = k
+        mean = np.mean(data[b])
+        med = np.median(data[b])
+        sd = np.std(data[b])
+
+        # -
+        results["analysis_code"].append(analysis_code)
+        results["count"].append(k)
+
+        results["mean"].append(mean)
+        results["med"].append(med)
+        results["sd"].append(sd)
 
     return results
 
@@ -396,7 +461,7 @@ def find_extrema(x_filt, Fs, f_range, boundary=None, first_extrema='peak'):
         mrzerorise = zeroriseN[p]
         nfzerofall = zerofallN[zerofallN > mrzerorise][0]
         # Identify time fo peak
-        Ps[p] = np.argmax(x[mrzerorise:nfzerofall]) + mrzerorise
+        Ps[p] = np.argmax(x_filt[mrzerorise:nfzerofall]) + mrzerorise
 
     # Calculate trough samples
     Ts = np.zeros(T, dtype=int)
@@ -406,11 +471,11 @@ def find_extrema(x_filt, Fs, f_range, boundary=None, first_extrema='peak'):
         mrzerofall = zerofallN[tr]
         nfzerorise = zeroriseN[zeroriseN > mrzerofall][0]
         # Identify time of trough
-        Ts[tr] = np.argmin(x[mrzerofall:nfzerorise]) + mrzerofall
+        Ts[tr] = np.argmin(x_filt[mrzerofall:nfzerorise]) + mrzerofall
 
     # Remove peaks and troughs within the boundary limit
-    Ps = Ps[np.logical_and(Ps > boundary, Ps < len(x) - boundary)]
-    Ts = Ts[np.logical_and(Ts > boundary, Ts < len(x) - boundary)]
+    Ps = Ps[np.logical_and(Ps > boundary, Ps < len(x_filt) - boundary)]
+    Ts = Ts[np.logical_and(Ts > boundary, Ts < len(x_filt) - boundary)]
 
     # Force the first extrema to be as desired
     # Assure equal # of peaks and troughs

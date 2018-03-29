@@ -19,7 +19,12 @@ from fakespikes.util import create_times
 # Setup cache
 from tempfile import mkdtemp
 from joblib import Memory
-cachedir = mkdtemp()
+if "ALPHA_CACHEDIR" in os.environ:
+    cachedir = os.environ["ALPHA_CACHEDIR"]
+else:
+    print(os.environ)
+    raise ValueError("ALPHA_CACHEDIR not set")
+
 memory = Memory(cachedir=cachedir, verbose=0)
 
 # --------------------------------------------------------

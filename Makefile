@@ -1,3 +1,11 @@
+SHELL=/bin/bash -O expand_aliases
+# type
+# export ALPHA_DATADIR=/Users/type/Data/Smith/data
+# export ALPHA_CACHEDIR=/Users/type/Data/Smith/data/tmp
+# FNB
+export ALPHA_DATADIR=/home/ejp/data/Smith/data
+export ALPHA_CACHEDIR=/home/ejp/data/Smith/data/tmp
+
 # ---------------------------------------------------------------------
 # Data for Fig 1/2 was made in their respective notebooks 
 # (in the figs/ dir)
@@ -109,3 +117,15 @@ fig4b_part6:
 		pars/fig4/mathewson_constant_noosc.yaml \
 		-t 2.0
 
+smith_analysis1:
+	# Create cache
+	-mkdir $(ALPHA_CACHEDIR)
+	# Clean old results
+	-rm $(ALPHA_DATADIR)/analysis1_*.csv
+	# Run
+	parallel -j 12 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis1.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py $(ALPHA_DATADIR)/analysis1_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.02' ::: {0..20}
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)

@@ -31,7 +31,7 @@ def run(name, data_path, n=None, percent_segment=1, bw=2, verbose=False):
     if n is not None:
         lfp_files = [lfp_files[n]]
         rate_files = [rate_files[n]]
-        sef_files = [seg_files[n]]
+        seg_files = [seg_files[n]]
 
     # --------------------------------------------------------------
     # For each data file, get the segments.

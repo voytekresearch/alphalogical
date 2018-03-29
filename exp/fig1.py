@@ -12,7 +12,7 @@ t = 60
 
 Is = np.linspace(0, 50e-3, 100)
 w_e = 4e-9
-w_i = 3.91 * w_e 
+w_i = 3.91 * w_e
 
 # --
 # a) on/off
@@ -22,26 +22,26 @@ min_rate = 30
 
 f = 0
 fi1, trains1, ge1, gi1, v1 = lif(t,
-                   Is,
-                   f,
-                   r_e=r_e,
-                   r_i=r_i,
-                   w_e=w_e,
-                   w_i=w_i,
-                   min_rate=min_rate,
-                   return_trains=True)
+                                 Is,
+                                 f,
+                                 r_e=r_e,
+                                 r_i=r_i,
+                                 w_e=w_e,
+                                 w_i=w_i,
+                                 min_rate=min_rate,
+                                 return_trains=True)
 ns1, ts1 = sp.spikedict_to(trains1)
 
 f = 10
 fi2, trains2, ge2, gi2, v2 = lif(t,
-                   Is,
-                   f,
-                   r_e=r_e,
-                   r_i=r_i,
-                   w_e=w_e,
-                   w_i=w_i,
-                   min_rate=min_rate,
-                   return_trains=True)
+                                 Is,
+                                 f,
+                                 r_e=r_e,
+                                 r_i=r_i,
+                                 w_e=w_e,
+                                 w_i=w_i,
+                                 min_rate=min_rate,
+                                 return_trains=True)
 ns2, ts2 = sp.spikedict_to(trains2)
 
 save_kdf(
@@ -61,8 +61,7 @@ save_kdf(
     v1=v1,
     ge2=ge2,
     gi2=gi2,
-    v2=v2,
-)
+    v2=v2, )
 
 # --
 # b) phase plot, and full FI for peak/trough
@@ -79,15 +78,15 @@ for r in rs:
     r_e = r
     r_i = r
     fi_r, _, _, _, _ = lif(t,
-                       Is,
-                       f,
-                       r_e=r_e,
-                       r_i=r_i,
-                       w_e=w_e,
-                       w_i=w_i,
-                       min_rate=min_rate,
-                       return_trains=True)
-    
+                           Is,
+                           f,
+                           r_e=r_e,
+                           r_i=r_i,
+                           w_e=w_e,
+                           w_i=w_i,
+                           min_rate=min_rate,
+                           return_trains=True)
+
     fi_phase.append(fi_r.mean())
 fi_phase = np.asarray(fi_phase)
 
@@ -95,28 +94,28 @@ fi_phase = np.asarray(fi_phase)
 r_e = 135
 r_i = 135
 fi1, trains1, ge1, gi1, v1 = lif(t,
-                   Is,
-                   f,
-                   r_e=r_e,
-                   r_i=r_i,
-                   w_e=w_e,
-                   w_i=w_i,
-                   min_rate=min_rate,
-                   return_trains=True)
+                                 Is,
+                                 f,
+                                 r_e=r_e,
+                                 r_i=r_i,
+                                 w_e=w_e,
+                                 w_i=w_i,
+                                 min_rate=min_rate,
+                                 return_trains=True)
 ns1, ts1 = sp.spikedict_to(trains1)
 
 # trough
 r_e = 30
 r_i = 30
 fi2, trains2, ge2, gi2, v2 = lif(t,
-                   Is,
-                   f,
-                   r_e=r_e,
-                   r_i=r_i,
-                   w_e=w_e,
-                   w_i=w_i,
-                   min_rate=min_rate,
-                   return_trains=True)
+                                 Is,
+                                 f,
+                                 r_e=r_e,
+                                 r_i=r_i,
+                                 w_e=w_e,
+                                 w_i=w_i,
+                                 min_rate=min_rate,
+                                 return_trains=True)
 ns2, ts2 = sp.spikedict_to(trains2)
 
 save_kdf(

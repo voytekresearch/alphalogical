@@ -7,11 +7,13 @@ from bluemass.bm import run
 from fakespikes.util import create_times
 from pykdf.kdf import save_kdf
 
+
 # -------------------------------------------------------------------
 # -------------------------------------------------------------------
 # -------------------------------------------------------------------
 def norm(x):
     return (x - x.min()) / (x.max() - x.min())
+
 
 # -------------------------------------------------------------------
 # -------------------------------------------------------------------
@@ -26,7 +28,9 @@ drop_before = 0.5
 times = create_times(t, dt)
 
 n_stim = 36
-loc = ['r_E', ]
+loc = [
+    'r_E',
+]
 m = 10  # 8 is Ince's advice
 
 # -------------------------------------------------------------------
@@ -51,13 +55,12 @@ if exp == "a":
 
             # ---
             # integrate
-            ys, layers, phi, rate, stim, params = run(
-                None,
-                times,
-                nopac,
-                sigma=s,
-                loc=loc,
-                stim_seed=j)
+            ys, layers, phi, rate, stim, params = run(None,
+                                                      times,
+                                                      nopac,
+                                                      sigma=s,
+                                                      loc=loc,
+                                                      stim_seed=j)
 
             idx = params.idx
 
@@ -84,13 +87,12 @@ if exp == "a":
             mi_no = info.I()
 
             # ---
-            ys, layers, phi, rate, stim, params = run(
-                None,
-                times,
-                pac,
-                sigma=s,
-                loc=loc,
-                stim_seed=j)
+            ys, layers, phi, rate, stim, params = run(None,
+                                                      times,
+                                                      pac,
+                                                      sigma=s,
+                                                      loc=loc,
+                                                      stim_seed=j)
 
             idx = params.idx
 
@@ -111,13 +113,14 @@ if exp == "a":
             # Save
             del_mi[j, i] = mi_pac - mi_no
 
-    save_kdf(os.path.join(save_path, name),
-            del_mi=del_mi,
-            n_stim=n_stim,
-            n_sigma=n_sigma,
-            stims = range(n_stim),
-            sigmas=sigmas)
-     
+    save_kdf(
+        os.path.join(save_path, name),
+        del_mi=del_mi,
+        n_stim=n_stim,
+        n_sigma=n_sigma,
+        stims=range(n_stim),
+        sigmas=sigmas)
+
 # -------------------------------------------------------------------
 # b. osc
 elif exp == "b":
@@ -127,18 +130,17 @@ elif exp == "b":
 
     del_mi = np.zeros((n_stim, n_sigma))
     for i, s in enumerate(sigmas):
-        for j in range(n_stim): 
+        for j in range(n_stim):
             print(">>> Fig {}, sigma {}, stim {}".format(name, s, j))
 
             # ---
             # integrate
-            ys, layers, phi, rate, stim, params = run(
-                None,
-                times,
-                nopac,
-                sigma=s,
-                loc=loc,
-                stim_seed=j)
+            ys, layers, phi, rate, stim, params = run(None,
+                                                      times,
+                                                      nopac,
+                                                      sigma=s,
+                                                      loc=loc,
+                                                      stim_seed=j)
 
             idx = params.idx
 
@@ -165,13 +167,12 @@ elif exp == "b":
             mi_no = info.I()
 
             # ---
-            ys, layers, phi, rate, stim, params = run(
-                None,
-                times,
-                pac,
-                sigma=s,
-                loc=loc,
-                stim_seed=j)
+            ys, layers, phi, rate, stim, params = run(None,
+                                                      times,
+                                                      pac,
+                                                      sigma=s,
+                                                      loc=loc,
+                                                      stim_seed=j)
 
             idx = params.idx
 
@@ -192,13 +193,13 @@ elif exp == "b":
             # Save
             del_mi[j, i] = mi_pac - mi_no
 
-    save_kdf(os.path.join(save_path, name),
-            del_mi=del_mi,
-            n_stim=n_stim,
-            n_sigma=n_sigma,
-            stims = range(n_stim),
-            sigmas=sigmas)
-     
+    save_kdf(
+        os.path.join(save_path, name),
+        del_mi=del_mi,
+        n_stim=n_stim,
+        n_sigma=n_sigma,
+        stims=range(n_stim),
+        sigmas=sigmas)
 
 # -------------------------------------------------------------------
 # -------------------------------------------------------------------
@@ -212,17 +213,13 @@ elif exp == "b":
 elif exp == "c":
     name = "c"
 
-    sigma = 10  
+    sigma = 10
 
     phases = [0, 5, 11, 22, 45, 90, 180]  # degrees, obvs
     n_phase = len(phases)
     par_phases = [
-        'phase_diff_ph0.yaml', 
-        'phase_diff_ph5.yaml',
-        'phase_diff_ph11.yaml',
-        'phase_diff_ph22.yaml',
-        'phase_diff_ph45.yaml',
-        'phase_diff_ph90.yaml',
+        'phase_diff_ph0.yaml', 'phase_diff_ph5.yaml', 'phase_diff_ph11.yaml',
+        'phase_diff_ph22.yaml', 'phase_diff_ph45.yaml', 'phase_diff_ph90.yaml',
         'phase_diff_ph180.yaml'
     ]
 
@@ -230,12 +227,12 @@ elif exp == "c":
     for i in range(n_stim):
         # Create a reference standard for rE
         ys, layers, phi, rate, stim, params = run(
-                    None,
-                    times,
-                    os.path.join(pars_path, 'phase_diff_ph0.yaml'),
-                    sigma=sigma,
-                    loc=loc,
-                    stim_seed=i)
+            None,
+            times,
+            os.path.join(pars_path, 'phase_diff_ph0.yaml'),
+            sigma=sigma,
+            loc=loc,
+            stim_seed=i)
 
         idx = params.idx
 
@@ -249,13 +246,13 @@ elif exp == "c":
             print(">>> Fig {}, stim {}, phase {}".format(name, i, phase))
 
             ys, layers, phi, rate, stim, params = run(
-                    None,
-                    times,
-                    os.path.join(pars_path, par),
-                    sigma=sigma,
-                    loc=loc,
-                    stim_seed=i)
-                
+                None,
+                times,
+                os.path.join(pars_path, par),
+                sigma=sigma,
+                loc=loc,
+                stim_seed=i)
+
             idx = params.idx
 
             x_e = ys[:, idx['r_E']].flatten()
@@ -275,14 +272,14 @@ elif exp == "c":
 
             mi_phase[i, j] = info.I()
 
-
-    save_kdf(os.path.join(save_path, name),
-            sigma=sigma,
-            mi_phase=mi_phase,
-            n_stim=n_stim,
-            n_phase=n_phase,
-            phases=phases,
-            par_phases=par_phases)
+    save_kdf(
+        os.path.join(save_path, name),
+        sigma=sigma,
+        mi_phase=mi_phase,
+        n_stim=n_stim,
+        n_phase=n_phase,
+        phases=phases,
+        par_phases=par_phases)
 
 else:
     raise ValueError("exp must be a, b or c")

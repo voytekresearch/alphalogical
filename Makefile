@@ -129,3 +129,16 @@ smith_analysis1:
 	'python exp/smith_burst_analysis.py analysis1_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.02' ::: {0..20}
 	# Cleanup cache
 	-rm -rf $(ALPHA_CACHEDIR)
+
+smith_analysis2:
+	# Create cache
+	-mkdir $(ALPHA_CACHEDIR)
+	# Clean old results
+	-rm $(ALPHA_DATADIR)/analysis2_*.csv
+	# Run
+	parallel -j 12 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis2.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py analysis2_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.5' ::: {0..20}
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)

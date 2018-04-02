@@ -22,8 +22,9 @@ from joblib import Memory
 if "ALPHA_CACHEDIR" in os.environ:
     cachedir = os.environ["ALPHA_CACHEDIR"]
 else:
-    print(os.environ)
-    raise ValueError("ALPHA_CACHEDIR not set")
+    cachedir = mkdtemp()
+    print("ALPHA_CACHEDIR was not preset.")
+    print("ALPHA_CACHEDIR set to {}".format(cachedir))
 
 memory = Memory(cachedir=cachedir, verbose=0)
 
@@ -182,6 +183,7 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
     return y
 
 
+@memory.cache
 def hilbert_power(x):
     return np.abs(hilbert(x))
 

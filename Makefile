@@ -117,6 +117,9 @@ fig4b_part6:
 		pars/fig4/mathewson_constant_noosc.yaml \
 		-t 2.0
 
+clean_smith_cache:
+	-rm -rf $(ALPHA_CACHEDIR)
+
 smith_analysis1:
 	# Create cache
 	-mkdir $(ALPHA_CACHEDIR)

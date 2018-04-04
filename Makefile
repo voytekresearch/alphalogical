@@ -120,6 +120,7 @@ fig4b_part6:
 clean_smith_cache:
 	-rm -rf $(ALPHA_CACHEDIR)
 
+# -----------------------------------------------------------------------------------------------
 smith_analysis1:
 	# Create cache
 	-mkdir $(ALPHA_CACHEDIR)
@@ -133,9 +134,13 @@ smith_analysis1:
 	# Cleanup cache
 	-rm -rf $(ALPHA_CACHEDIR)
 
+# -----------------------------------------------------------------------------------------------
+# 4-2-2018
 # Made some cache opt since a1.
 # Here's another 'quick' test.
 # 88ecc44df7b2bb061796b33c0b7313a31323c716
+# RUnning all sets at the time let the cache grow to > 300 Gb
+# Going to need to run in smaller sets, clearing the cache manually along the way.
 smith_analysis2:
 	# Create cache
 	-mkdir $(ALPHA_CACHEDIR)
@@ -148,3 +153,46 @@ smith_analysis2:
 	'python exp/smith_burst_analysis.py analysis2_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.05' ::: {0..20}
 	# Cleanup cache
 	-rm -rf $(ALPHA_CACHEDIR)
+
+# -----------------------------------------------------------------------------------------------
+# 4-3-2018
+# Try it in smaller chunks...
+smith_analysis3:
+	# ------------------------------
+	# Create cache
+	-mkdir $(ALPHA_CACHEDIR)
+	# Clean old results
+	-rm $(ALPHA_DATADIR)/analysis3_*.csv
+	# ------------------------------
+	# Run 1 - 5
+	parallel -j 5 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis3.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py analysis3_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.05' ::: 0 1 2 4 5
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)
+	# ------------------------------
+	# Run 5 - 10
+	parallel -j 5 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis3.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py analysis3_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.05' ::: 6 7 8 9 10
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)
+	# ------------------------------
+	# Run 10 - 15
+	parallel -j 5 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis3.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py analysis3_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.05' ::: 11 12 13 14 15
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)
+	# ------------------------------
+	# Run 15 - 21
+	parallel -j 5 -v \
+		--joblog '$(ALPHA_DATADIR)/analysis3.log' \
+		--nice 19 --delay 2 --colsep ',' \
+	'python exp/smith_burst_analysis.py analysis3_set{1} $(ALPHA_DATADIR) --verbose --n={1} --percent_segment=0.05' ::: 16 17 18 19 20
+	# Cleanup cache
+	-rm -rf $(ALPHA_CACHEDIR)
+	

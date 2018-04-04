@@ -161,6 +161,7 @@ smith_analysis3:
 	# ------------------------------
 	# Create cache
 	-mkdir $(ALPHA_CACHEDIR)
+	-rm -rf $(ALPHA_CACHEDIR)
 	# Clean old results
 	-rm $(ALPHA_DATADIR)/analysis3_*.csv
 	# ------------------------------
